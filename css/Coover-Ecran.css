@@ -1,0 +1,104 @@
+.modal-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset-block-start: 160px;
+    inset-inline-start: 650px;
+    inline-size: 100%;
+    block-size: 100%;
+    background: transparent;
+    z-index: 1000;
+    padding: 20px;
+}
+
+/* Conteneur des options de fond */
+.background-options {
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    inline-size: 80%;
+    /* Largeur de la modale adaptée pour un iPad */
+    max-inline-size: 350px;
+    /* Limite la largeur maximale */
+    block-size: auto;
+    box-shadow: transparent;
+}
+
+/* Liste des images de fond */
+.background-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permet aux images de passer à la ligne si nécessaire */
+    gap: 15px;
+    /* Espace entre les images */
+    justify-content: center;
+    /* Centre les images dans la liste */
+    margin-block-end: 20px;
+}
+
+/* Style pour chaque image d'option */
+.background-option {
+    inline-size: 150px;
+    block-size: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet au survol des images */
+.background-option:hover {
+    transform: scale(1.1);
+}
+
+/* Style pour le bouton de fermeture */
+.close-button {
+    position: absolute;
+    inset-block-start: -20px;
+    inset-inline-end: -20px;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    font-size: 20px;
+    inline-size: 30px;
+    block-size: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+/* Effet au survol du bouton de fermeture */
+.close-button:hover {
+    background-color: darkred;
+}
+
+/* Media queries pour ajuster la modale au format iPad */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .background-options {
+        inline-size: 70%;
+        /* Réduction de la largeur pour iPad */
+        padding: 15px;
+        /* Réduction de la marge interne */
+    }
+
+    .background-option {
+        inline-size: 120px;
+        /* Taille des images réduite */
+        block-size: 120px;
+    }
+
+    .close-button {
+        font-size: 18px;
+        /* Taille du texte réduite */
+        inline-size: 40px;
+        block-size: 40px;
+    }
+}

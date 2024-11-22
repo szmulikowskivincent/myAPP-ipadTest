@@ -1,0 +1,61 @@
+.nav-cover {
+    position: fixed;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inline-size: 50%;
+    z-index: 1;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.nav-cover.left {
+    inset-inline-start: 0;
+    cursor: default;
+}
+
+.nav-cover.right {
+    inset-inline-end: 0;
+    cursor: default;
+}
+
+.nav-button {
+    position: fixed;
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+    inline-size: 50px;
+    block-size: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+    font-size: 32px;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.nav-button.left {
+    inset-inline-start: 745px;
+}
+
+.nav-button.right {
+    inset-inline-end: 745px;
+}
+
+.nav-button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.application-icon {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+}

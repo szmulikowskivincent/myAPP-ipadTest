@@ -1,0 +1,70 @@
+#keypad {
+    text-align: center;
+    margin-block-start: 20px;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 10px;
+}
+
+.key {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    inline-size: 60px;
+    block-size: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease;
+}
+
+.key:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
+}
+
+.clear-key {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    inline-size: 60px;
+    block-size: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.5);
+    border: 1px solid rgba(255, 0, 0, 0.8);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.clear-key:hover {
+    background-color: rgba(236, 152, 152, 0.7);
+    transform: scale(1.1);
+}
+
+#code-display {
+    font-size: 2rem;
+    letter-spacing: 5px;
+    margin-block-end: 10px;
+}
+
+#start-logo {
+    position: fixed;
+    inset-block-end: 135px;
+    margin-inline-start: 300px;
+    inline-size: 3.5%;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    #start-logo {
+        inline-size: 20%;
+    }
+}

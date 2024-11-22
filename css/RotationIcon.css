@@ -1,0 +1,29 @@
+.rotated {
+  transition: transform 0.5s ease-in-out;
+  transform: rotate(270deg);
+}
+
+.rotation-button {
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: 50%;
+  margin-inline-start: 255px;
+  margin-block-start: 6.5cm;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.rotation-button:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
+.img-rotation {
+  inline-size: 40px;
+  block-size: 40px;
+  margin-inline-start: -5px;
+  border-radius: 50%;
+  border: solid 3px chartreuse;
+}

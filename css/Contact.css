@@ -1,0 +1,111 @@
+#contacts-app {
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    inset-block-start: 70%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    /* Fond transparent */
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    max-inline-size: 400px;
+    margin-inline-start: 95px;
+    z-index: 1000;
+}
+
+.close-button-contact {
+    background-color: transparent;
+    color: white;
+    font-size: 32px;
+    position: absolute;
+    inset-block-start: 410px;
+    margin-inline-start: 180px;
+    border: 3px solid white;
+    border-radius: 50%;
+    inline-size: 50px;
+    block-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    background-size: 50%;
+    background-position: center;
+}
+
+.close-button-contact:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+
+#contact-list {
+    max-block-size: 300px;
+    overflow-y: auto;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-block-end: 1px solid #444;
+}
+
+.contact-card:last-child {
+    border-block-end: none;
+}
+
+.contact-avatar {
+    inline-size: 50px;
+    block-size: 50px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 50%;
+    margin-inline-end: 15px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-name {
+    font-weight: bold;
+    margin-block-end: 5px;
+}
+
+.contact-phone,
+.contact-address {
+    font-size: 14px;
+}
+
+.close-button {
+    background-color: transparent;
+    color: #fff;
+    border: solid 1px white;
+    font-size: 24px;
+    border-radius: 50%;
+    padding: 10px 15px;
+    inline-size: 60px;
+    block-size: 60px;
+    margin-block-start: 15px;
+    cursor: pointer;
+    display: block;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+.close-button:hover {
+    background-color: #ebd8d8;
+}

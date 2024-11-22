@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <head>
+    <!-- Lien vers la feuille de style Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  </head>
+
+  <title>iPad Interface</title>
+  <!-- Feuilles de style CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/BarreReseau.css" />
+  <link rel="stylesheet" href="css/Veille.css" />
+  <link rel="stylesheet" href="css/Galerie.css" />
+  <link rel="stylesheet" href="css/Contact.css" />
+  <link rel="stylesheet" href="css/Email.css" />
+  <link rel="stylesheet" href="css/SMS.css" />
+  <link rel="stylesheet" href="css/Chat-Box.css" />
+  <link rel="stylesheet" href="css/Parametres.css" />
+  <link rel="stylesheet" href="css/BarreRecherche.css" />
+  <link rel="stylesheet" href="css/NavButton.css" />
+  <link rel="stylesheet" href="css/Galerie-photos.css" />
+  <link rel="stylesheet" href="css/Coover-Ecran.css" />
+  <link rel="stylesheet" href="css/Menu.css" />
+  <link rel="stylesheet" href="css/RotationIcon.css" />
+</head>
+
+<body>
+  <!-- Couverture de l'iPad -->
+  <div class="ipad-cover">
+    <!-- Logo de la caméra de l'iPad -->
+    <div class="image-container">
+      <img src="assets/logos/logo_CameraIPAD.jpg" width="5%" alt="Logo Camera IPAD" onclick="activerCamera()" />
+    </div>
+
+    <!-- Vidéo pour afficher le flux de la caméra -->
+    <video style="margin-inline-start: 15px;" id="video" width="150" height="150" autoplay></video>
+
+
+    <br />
+
+    <!-- Horloge -->
+    <div class="clock" id="clock"></div>
+
+    <!-- Informations réseau -->
+    <div class="network-info">
+      <span class="network-name">Proximus</span>
+    </div>
+
+    <!-- Barre de réseau animée -->
+    <div style="margin-inline-start: 340px" class="network-bar">
+      <div class="bar" style="block-size: 20%; animation-delay: 0s"></div>
+      <div class="bar" style="block-size: 40%; animation-delay: 0.2s"></div>
+      <div class="bar" style="block-size: 60%; animation-delay: 0.4s"></div>
+      <div class="bar" style="block-size: 80%; animation-delay: 0.6s"></div>
+      <div class="bar" style="block-size: 100%; animation-delay: 0.8s"></div>
+    </div>
+
+    <br />
+
+    <div class="menu-container">
+      <!-- Icône du menu -->
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar-menu"></div>
+        <div class="bar-menu"></div>
+        <div class="bar-menu"></div>
+      </div>
+
+      <!-- Menu déroulant -->
+      <div id="menu" class="menu">
+        <ul>
+          <li>
+            <a href="#camera"><img src="assets/logos/logo_CameraIPAD.jpg" alt="Camera" /></a>
+          </li>
+          <li>
+            <a href="#contact"><img src="assets/logos/logo_Contact.png" alt="Contact" /></a>
+          </li>
+          <li>
+            <a href="#settings"><img src="assets/logos/logo_Paramétres.jpg" alt="Paramètres" /></a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Logo Apple -->
+    <img style="margin-inline-start: 195px" src="assets/imgs/Apple-Logo-PNG-Transparent-Image.png" width="15%" />
+
+    <!-- Galerie Photo -->
+    <div id="galerie" class="galerie-container hidden">
+      <div class="galerie-header">
+        <span id="fermer-galerie" class="close-button">&times;</span>
+      </div>
+      <div class="galerie-content">
+        <img src="assets/galerie-photos/329179246_1344073763043748_6147639066128938402_n.jpg" alt="Photo 1" />
+        <br /><br />
+        <img src="assets/galerie-photos/382965970_322248390459616_622785859261001337_n.jpg" alt="Photo 2" />
+        <br /><br />
+        <img src="assets/galerie-photos/download-3.jpeg" alt="Photo 3" />
+        <!-- Ajoutez d'autres photos ici -->
+      </div>
+    </div>
+
+    <!-- Interface principale de l'iPad -->
+    <div class="ipad-interface">
+      <!-- Icône pour l'application Appareil Photo -->
+      <img class="app-icon" id="camera-app" src="assets/logos/logo_Photo.png" alt="Appareil Photo" />
+
+      <!-- Icône pour l'application Contacts -->
+      <div id="app-container">
+        <img class="contact-icon" id="contacts-app" src="assets/logos/logo_Contact.png" alt="Contacts" />
+      </div>
+
+      <!-- Modale pour afficher la liste des contacts -->
+      <div id="modal" class="modal" style="display: none">
+        <div id="contact-list"></div>
+        <button id="close-modal" class="close-button-contact">X</button>
+      </div>
+
+      <!-- Icône pour l'application Appels -->
+      <img class="appel-icon" id="call-app" src="assets/logos/logo_Contact.webp" alt="Appels" />
+
+      <!-- Icône pour les Réseaux Sociaux -->
+      <img class="app-icon" id="socials-app" src="assets/logos/icone_Web.png" alt="Réseaux Sociaux" />
+
+      <!-- Icône pour l'application Chat-Box -->
+      <img class="app-icon" id="chat-app" src="assets/logos/logo_SMS.png" alt="Chat-Box" onclick="toggleChat()" />
+
+      <!-- Cover gauche vide pour la redirection vers la page précédente -->
+      <div class="nav-cover left"></div>
+
+      <!-- Button for navigation on the left -->
+      <a href="assets/imgs/462543613_554679990654462_4393229896590328831_n (1).png" class="nav-button left"
+        onclick="showCover('left')">◀</a>
+
+      <!-- Button for navigation on the right -->
+      <a href="assets/imgs/462548269_1064179511826853_5554858567029394413_n (1).png" class="nav-button right"
+        onclick="showCover('right')">▶</a>
+
+      <!-- Cover droit vide pour la redirection vers la page suivante -->
+      <div class="nav-cover right"></div>
+
+      <!-- Fenêtre de Chat -->
+      <div id="chat-window" class="chat-hidden">
+        <div class="chat-header">
+          <span>🗨 Chat-Box</span>
+          <button style="margin-inline-start: 270px" id="close-chat" onclick="toggleChat()">
+            X
+          </button>
+        </div>
+        <div id="chat-content">
+          <!-- Messages apparaîtront ici -->
+        </div>
+        <div class="chat-input">
+          <input type="text" id="chat-message" placeholder="✍🏻 Écrivez un message..." />
+          <button onclick="sendMessage()">Envoyer</button>
+        </div>
+      </div>
+
+      <!-- Bouton SMS -->
+      <button id="sms-button" class="sms-button" onclick="toggleSmsModal()">
+        SMS
+      </button>
+
+      <!-- Modal pour les SMS -->
+      <div id="sms-cover" class="sms-cover" style="display: none">
+        <div class="sms-window">
+          <ul>
+            <!-- Exemple de messages -->
+            <li class="sms-item">
+              <div class="contact-avatar-initial">C1</div>
+              <span class="contact-name">Maman</span>
+              <span class="contact-number">+323456789</span>
+              <span class="sms-subject">Comment vas tu?</span>
+            </li>
+            <li class="sms-item">
+              <div class="contact-avatar-initial">C2</div>
+              <span class="contact-name">Soeur</span>
+              <span class="contact-number">+327654321</span>
+              <span class="sms-subject">Impossible de venir aujourd'hui!</span>
+            </li>
+          </ul>
+          <button class="close-button-sms" onclick="toggleSmsModal()">
+            X
+          </button>
+        </div>
+      </div>
+
+      <!-- Icône pour l'application Email -->
+      <img class="email-icon" id="email-app" src="assets/logos/logo_Email.jpg" alt="Email" onclick="showEmailModal()" />
+
+      <!-- Icône pour l'application Galerie-photos -->
+      <img class="galerie-photo" id="galerie-photo-app" src="assets/imgs/logo_GaleriePhotos.avif"
+        alt="Galerie-photos" />
+
+      <!-- Modale des emails -->
+      <div id="email-modal" class="email-window" style="display: none">
+        <div id="email-list"></div>
+        <button id="close-modal" class="close-button-email" onclick="closeEmailModal()">
+          X
+        </button>
+      </div>
+
+      <!-- Icône de la Galerie Photo -->
+      <div>
+        <img class="app-icon" id="galerie-app" src="assets/logos/logo_Galerie.jpg" alt="Galerie Photo"
+          style="cursor: pointer; inline-size: 45px; block-size: 45px" />
+        <!-- Formulaire de téléchargement d'image -->
+        <form id="upload-form" action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
+          <input type="file" id="file-input" name="photo" accept="image/*" style="display: none" />
+        </form>
+      </div>
+
+      <!-- Modale pour changer le fond d'écran -->
+      <div id="background-modal" class="modal-cover" style="display: none">
+        <div class="background-options">
+          <div class="background-list">
+            <img src="https://www.simplehelp.net/wp-content/uploads/ipad_mini_wallpaper_01.jpg" alt="Fond 1"
+              class="background-option"
+              onclick="changeBackground('https://www.simplehelp.net/wp-content/uploads/ipad_mini_wallpaper_01.jpg')" />
+            <img src="https://www.simplehelp.net/wp-content/uploads/ipad_mini_wallpaper_02.jpg" alt="Fond 2"
+              class="background-option"
+              onclick="changeBackground('https://www.simplehelp.net/wp-content/uploads/ipad_mini_wallpaper_02.jpg')" />
+            <img src="https://www.simplehelp.net/wp-content/uploads/ipad_mini_wallpaper_03.jpg" alt="Fond 3"
+              class="background-option"
+              onclick="changeBackground('https://www.simplehelp.net/wp-content/uploads/ipad_mini_wallpaper_03.jpg')" />
+          </div>
+          <button style="margin-inline-start: 270px" class="close-button" onclick="toggleBackgroundModal()">
+            X
+          </button>
+        </div>
+      </div>
+      <img class="parametres-icon" id="parametres-app" src="assets/logos/logo_Paramétres.jpg" alt="Paramètres"
+        onclick="toggleBackgroundModal()" />
+
+      <br />
+
+      <!--Barre de recherche googel-->
+      <div class="search-bar-container">
+        <form action="https://www.google.com/search" method="get" target="_blank" class="search-bar-form">
+          <input type="text" name="q" class="search-input" placeholder="Recherchez sur Google..." required />
+          <button type="submit" class="search-button">🔍</button>
+        </form>
+      </div>
+
+      <button onclick="rotateIcons()" class="rotation-button">
+        <img src="assets/logos/icone_Rotation.jpg" class="img-rotation" alt="Rotation Icon" />
+      </button>
+
+      <!-- Logo pour démarrer l'écran de veille -->
+      <div align="center">
+        <img id="start-logo" src="assets/logos/logo_Start.png" alt="Logo Start" />
+      </div>
+
+      <!-- Écran de veille avec clavier numérique -->
+      <div id="screensaver">
+        <div id="keypad" style="display: none">
+          <div id="code-display"></div>
+          <div id="keys">
+            <!-- Clavier numérique -->
+            <button class="key">1</button>
+            <button class="key">2</button>
+            <button class="key">3</button>
+            <button class="key">4</button>
+            <button class="key">5</button>
+            <button class="key">6</button>
+            <button class="key">7</button>
+            <button class="key">8</button>
+            <button class="key">9</button>
+            <button class="key">0</button>
+            <button class="clear-key" id="clear-key">C</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inclusion des fichiers JavaScript -->
+  <script src="js/script.js"></script>
+  <script src="js/Clock.js"></script>
+  <script src="js/Veille.js"></script>
+  <script src="js/Galerie.js"></script>
+  <script src="js/Contact.js"></script>
+  <script src="js/Email.js"></script>
+  <script src="js/SMS.js"></script>
+  <script src="js/Chat-Box.js"></script>
+  <script src="js/Parametre.js"></script>
+  <script src="js/Clic.js"></script>
+  <script src="js/Galerie-photos.js"></script>
+  <script src="js/Menu.js"></script>
+  <script src="js/RotationIcon.js"></script>
+  <script src="js/Camera.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+.network-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    inline-size: 40px;
+    block-size: 20px;
+    background-color: rgb(6, 91, 160);
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    inset-block-start: -3.5cm;
+}
+
+.bar {
+    inline-size: 10%;
+    background-color: rgb(83, 245, 83);
+    animation: signal 1s infinite ease-in-out;
+}
+
+@keyframes signal {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.clock {
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-start: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(6, 91, 160);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: "Arial", sans-serif;
+}
+
+.network-info {
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+}
+
+.network-name {
+    text-transform: uppercase;
+}
+
+img {
+    margin-inline-start: 200px;
+}

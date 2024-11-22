@@ -1,0 +1,54 @@
+.email-avatar {
+    display: inline-block;
+    inline-size: 40px;
+    block-size: 40px;
+    background-color: #3498db;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-inline-end: 10px;
+}
+
+.email-window {
+    background-color: transparent;
+    color: white;
+    margin-inline-start: 155px;
+    margin-block-start: -8cm;
+    inline-size: 360px;
+    padding: 15px;
+    text-align: center;
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.close-button-email {
+    background-color: transparent;
+    color: white;
+    font-size: 32px;
+    position: absolute;
+    inset-block-start: 440px;
+    margin-inline-start: 160px;
+    border: 3px solid white;
+    border-radius: 50%;
+    inline-size: 50px;
+    block-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    background-size: 50%;
+    background-position: center;
+}
+
+.close-button-email:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
