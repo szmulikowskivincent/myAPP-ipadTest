@@ -78,9 +78,9 @@
     background-color: transparent;
 }
 
+
 @media (max-width: 768px) {
 
-    /* Adaptation mobile */
     .menu-icon {
         inset-block-start: 10px;
         inset-inline-start: 10px;

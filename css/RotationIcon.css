@@ -27,3 +27,29 @@
   border-radius: 50%;
   border: solid 3px chartreuse;
 }
+
+.ipad-cover {
+  transition: transform 0.5s ease;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+/* Ajouter une classe pour cacher le menu pendant la rotation */
+.hidden-while-rotating {
+  visibility: hidden;
+  /* Masquer le menu pendant la rotation */
+  opacity: 0;
+  /* Ajouter de l'opacité à 0 pour rendre le menu invisible */
+  pointer-events: none;
+  /* Empêcher les interactions avec le menu */
+  transition: visibility 0.5s, opacity 0.5s ease-out;
+  /* Transition pour rendre l'effet fluide */
+}
+
+/* Optionnel : ajouter des styles pour le menu une fois visible après la rotation */
+.menu {
+  transition: visibility 0.5s, opacity 0.5s ease-out;
+  /* Transition pour afficher */
+}
